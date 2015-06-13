@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  .container
+    .jumbotron
+      h4 #{error.status} &mdash; #{message}
+      pre #{error.stack}

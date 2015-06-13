@@ -1,0 +1,19 @@
+.container-fluid
+  form.form-horizontal(ng-submit='confirm()')
+
+    //- name of the topic
+    .form-group
+      label.col-sm-2.control-label(for='name') Name
+      .col-sm-10
+        input#name.form-control(placeholder='Name of the topic', ng-model='newTopic.name')
+
+    //- description of the topic
+    .form-group
+      label.col-sm-2.control-label(for='description') Description
+      .col-sm-10
+        textarea#description.form-control(placeholder='Short description of the topic', ng-model='newTopic.description')
+
+    .row
+      .buttons.pull-right
+        button.btn.btn-default(type='reset', ng-click='closeThisDialog()') Cancel
+        button.btn.btn-primary(type='submit') Save

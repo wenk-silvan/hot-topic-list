@@ -1,0 +1,10 @@
+.container-fluid
+  .row
+    .p= message
+  .row
+    .pull-right.buttons
+      button.btn.btn-default(type='reset', ng-click='closeThisDialog()')=cancel.text
+      button.btn(type='submit', class=confirm.style, ng-click='confirm()')
+        - if(confirm.icon)
+          span(class=confirm.icon) &nbsp;
+        | #{confirm.text}

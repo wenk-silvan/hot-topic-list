@@ -1,0 +1,27 @@
+.container
+  .col-sm-6.col-sm-offset-3
+    h1: span.fa.fa-sign-in
+      |  Sign in
+
+    form(ng-submit="login()")
+      //- username
+      .form-group(ng-class="{'has-error has-feedback': errors.username.length}")
+        label.control-label(for='username') Username
+        input#username.form-control(type='text', name='username', ng-model='credentials.username')
+        span.fa.fa-remove.form-control-feedback(aria-hidden='true', ng-show='errors.username.length')
+        span.sr-only(ng-show='errors.username.length') (error)
+        p.help-block(ng-bind='errors.username', ng-show='errors.username.length')
+
+      //-password
+      .form-group(ng-class="{'has-error has-feedback': errors.password.length}")
+        label.control-label(for='password') Password
+        input#password.form-control(type='password', name='password', ng-model='credentials.password')
+        span.fa.fa-remove.form-control-feedback(aria-hidden='true', ng-show='errors.password.length')
+        span.sr-only(ng-show='errors.password.length') (error)
+        p.help-block(ng-bind='errors.password', ng-show='errors.password.length')
+
+      button.btn.btn-primary.pull-right(type='submit') Login
+    .clearfix
+    hr
+    p Need an account?
+      a(href='#/signup')  Signup

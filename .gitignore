@@ -3,3 +3,9 @@ src/node_modules
 
 # Bower dependency directory
 src/public/libs
+
+# IDE files
+.idea
+
+# Configuration file
+src/config.json

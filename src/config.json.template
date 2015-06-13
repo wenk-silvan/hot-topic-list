@@ -1,0 +1,7 @@
+{
+  "port": 80,
+  "database": {
+    "connection": "mongodb://localhost/hot-topic-list"
+  },
+  "secret": "password"
+}

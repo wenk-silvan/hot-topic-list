@@ -1,0 +1,16 @@
+.container
+  .alert.alert-info.alert-dismissible(ng-show='!topics.length', role='alert')
+    span.fa.fa-info-circle
+    |  Currently no topics available
+  .list-group(ng-show='topics.length')
+    .list-group-item(ng-repeat='topic in topics')
+      .row
+        .col-sm-10
+          h4.list-group-item-heading
+            a(href='#/topics/{{topic._id}}' ng-bind='topic.name')
+          p.list-group-item-text.ellipsis(ng-bind-html='topic.description | markdown | plaintext')
+        .col-sm-2
+          .btn-group.pull-right
+            a.btn.btn-primary(aria-label='edit topic', ng-click='openEditTopicDialog(topic)'): span.fa.fa-edit
+            a.btn.btn-danger(aria-label='delete topic', ng-click='openDeleteTopicDialog(topic)'): span.fa.fa-trash
+

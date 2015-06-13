@@ -1,4 +1,4 @@
-# Hot Topics List
+# Hot Topic List
 ![Version](https://img.shields.io/badge/version-n/a-red.svg)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
 [![Language](https://img.shields.io/badge/language-JavaScript-blue.svg)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
