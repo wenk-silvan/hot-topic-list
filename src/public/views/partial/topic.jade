@@ -1,8 +1,20 @@
 .container
   .page-header
-    h1(ng-bind='topic.name')
+    h1#general(ng-bind='topic.name')
   .col-sm-12(ng-bind-html="topic.description | markdown")
 
+  .page-header
+    h2#sharing
+      span.fa.fa-users
+      |  Sharing
   div(ng-show='topic.owner.length > 0')
-    h4 Administrators
-    bootstrap-tagsinput.col-sm-12(placeholder='Add/Remove administrators', ng-model='topic.owner', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+    h5.col-sm-2 Administrators
+    bootstrap-tagsinput#owner.col-sm-10(ng-model='topic.owner', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+
+  //div(ng-show='topic.editor.length > 0')
+  //  h5.col-sm-2 Editors
+  //  bootstrap-tagsinput#editor.col-sm-10(ng-model='topic.editor', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+
+  //div(ng-show='topic.reader.length > 0')
+  //  h5.col-sm-2 Editors
+  //  bootstrap-tagsinput#reader.col-sm-10(ng-model='topic.reader', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")

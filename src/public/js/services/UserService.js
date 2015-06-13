@@ -17,7 +17,7 @@ htlApp.factory('User', function ($http) {
     },
 
     find: function(query) {
-      return $http.get(apiUrl + "/user/find");
+      return $http.get(apiUrl + "/user/find/" + encodeURIComponent(query));
     },
 
     /**

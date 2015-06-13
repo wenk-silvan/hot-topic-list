@@ -9,6 +9,8 @@ htlApp.controller("SingleTopicController", function ($scope, $http, $routeParams
   };
 
   $scope.nameOf = function(item) {
-    return item.firstname.concat(' ', item.lastname);
+    if(!!item.firstname && !!item.lastname)
+      return item.firstname.concat(' ', item.lastname);
+    return item.local.username;
   }
 });
