@@ -1,4 +1,4 @@
-htlApp.controller("TopicController", function ($scope, $http, hotkeys, ngDialog, Topic) {
+htlApp.controller("TopicController", function ($scope, hotkeys, ngDialog, Topic) {
   $scope.topics = [];
 
   $scope.newTopic = Topic.empty();

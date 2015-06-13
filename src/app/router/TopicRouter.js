@@ -14,6 +14,7 @@ router.get("/", function (req, res) {
 router.get("/:_id", function (req, res) {
   Topic.findById(req.params._id)
     .where("owner").in([req.user._id])
+    .populate("owner")
     .exec(function (err, topic) {
       if(err) return err;
       res.status(200).send(topic);

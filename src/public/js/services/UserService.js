@@ -16,6 +16,10 @@ htlApp.factory('User', function ($http) {
       return $http.get(apiUrl + "/authentication/logout");
     },
 
+    find: function(query) {
+      return $http.get(apiUrl + "/user/find");
+    },
+
     /**
      * Try's a signup of a given user. Use the HttpPromises <c>success</c> and <c>error</c> for result handling.
      * @param user The user to singup

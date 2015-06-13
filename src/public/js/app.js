@@ -1,4 +1,4 @@
-var htlApp = angular.module('htlApp', ['ngRoute', 'ngDialog', 'ngSanitize', 'cfp.hotkeys', 'btford.markdown']);
+var htlApp = angular.module('htlApp', ['ngRoute', 'ngDialog', 'ngSanitize', 'cfp.hotkeys', 'btford.markdown', 'bootstrap-tagsinput']);
 
 htlApp.config(['markdownConverterProvider', function (markdownConverterProvider) {
   markdownConverterProvider.config({extensions: ['github']});

@@ -1,3 +1,8 @@
 .container
-  h2(ng-bind='topic.name')
-  div.well(ng-bind-html="topic.description | markdown")
+  .page-header
+    h1(ng-bind='topic.name')
+  .col-sm-12(ng-bind-html="topic.description | markdown")
+
+  div(ng-show='topic.owner.length > 0')
+    h4 Administrators
+    bootstrap-tagsinput.col-sm-12(placeholder='Add/Remove administrators', ng-model='topic.owner', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")

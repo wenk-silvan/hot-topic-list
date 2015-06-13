@@ -29,6 +29,10 @@ body {
   padding-right: 1px !important;
 }
 
+.bootstrap-tagsinput {
+  width: 100%;
+}
+
 .home {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
