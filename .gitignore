@@ -1,2 +1,5 @@
 # NPM dependency directory
-node_modules
+src/node_modules
+
+# Bower dependency directory
+src/public/libs
