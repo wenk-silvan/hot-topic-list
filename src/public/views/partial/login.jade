@@ -7,7 +7,7 @@
       //- username
       .form-group(ng-class="{'has-error has-feedback': errors.username.length}")
         label.control-label(for='username') Username
-        input#username.form-control(type='text', name='username', ng-model='credentials.username')
+        input#username.form-control(type='text', name='username', ng-model='credentials.username', autofocus)
         span.fa.fa-remove.form-control-feedback(aria-hidden='true', ng-show='errors.username.length')
         span.sr-only(ng-show='errors.username.length') (error)
         p.help-block(ng-bind='errors.username', ng-show='errors.username.length')

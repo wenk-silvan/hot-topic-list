@@ -9,12 +9,15 @@
       |  Sharing
   div(ng-show='topic.owner.length > 0')
     h5.col-sm-2 Administrators
-    bootstrap-tagsinput#owner.col-sm-10(ng-model='topic.owner', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+    bootstrap-tagsinput#owner.col-sm-10(ng-if='containsUser(topic.owner, account)', ng-model='topic.owner', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+    #owner.col-sm-10: pre(ng-if='!containsUser(topic.owner, account)', ng-repeat='owner in topic.owner') {{nameOf(owner)}}{{$last?'':', '}}
 
-  //div(ng-show='topic.editor.length > 0')
-  //  h5.col-sm-2 Editors
-  //  bootstrap-tagsinput#editor.col-sm-10(ng-model='topic.editor', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+  div(ng-show='topic.editor.length > 0')
+    h5.col-sm-2 Editors
+    bootstrap-tagsinput#editor.col-sm-10(ng-if='containsUser(topic.editor, account)', ng-model='topic.editor', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+    #owner.col-sm-10: pre(ng-if='!containsUser(topic.editor, account)', ng-repeat='editor in topic.editor') {{nameOf(editor)}}{{$last?'':', '}}
 
-  //div(ng-show='topic.reader.length > 0')
-  //  h5.col-sm-2 Editors
-  //  bootstrap-tagsinput#reader.col-sm-10(ng-model='topic.reader', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+  div(ng-show='topic.reader.length > 0')
+    h5.col-sm-2 Reader
+    bootstrap-tagsinput#reader.col-sm-10(ng-if='containsUser(topic.reader, account)', ng-model='topic.reader', itemvalue="_id", itemtext="nameOf", typeahead-source="queryUsers", tagclass="label label-primary")
+    #owner.col-sm-10: pre(ng-if='!containsUser(topic.reader, account)', ng-repeat='reader in topic.reader') {{nameOf(reader)}}{{$last?'':', '}}

@@ -1,4 +1,10 @@
-var htlApp = angular.module('htlApp', ['ngRoute', 'ngDialog', 'ngSanitize', 'cfp.hotkeys', 'btford.markdown', 'bootstrap-tagsinput']);
+var htlApp = angular.module('htlApp',
+  ['ngRoute',
+    'ngDialog',
+    'ngSanitize',
+    'cfp.hotkeys',
+    'btford.markdown',
+    'bootstrap-tagsinput']);
 
 htlApp.config(['markdownConverterProvider', function (markdownConverterProvider) {
   markdownConverterProvider.config({extensions: ['github']});
@@ -10,6 +16,13 @@ htlApp.run(function ($rootScope, $location, User) {
   // checks if the view location is active
   $rootScope.isActive = function (viewLocation) {
     return $location.path().indexOf(viewLocation) > -1;
+  };
+
+  $rootScope.containsUser = function (list, user) {
+    if(!list) return false;
+    return list.filter(function (u) {
+        return u._id == user._id;
+      }).length > 0;
   };
 
   // navigate to the given view location
